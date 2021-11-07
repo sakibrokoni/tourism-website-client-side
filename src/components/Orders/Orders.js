@@ -22,7 +22,7 @@ const Orders = () => {
   const onSubmit = (data) => {
     const savedCart = serviceToShow;
     data.cart = savedCart;
-    fetch("http://localhost:5000/orders", {
+    fetch("https://sleepy-island-26546.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

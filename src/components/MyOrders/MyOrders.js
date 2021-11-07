@@ -8,7 +8,7 @@ const MyOrders = () => {
   const showBtn = false;
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders/manageall")
+    fetch("https://sleepy-island-26546.herokuapp.com/orders/manageall")
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, []);
@@ -18,7 +18,7 @@ const MyOrders = () => {
   const handleDelete = (_id) => {
     const proced = window.confirm("Are you sure, you want to delete?");
     if (proced) {
-      const url = `http://localhost:5000/orders/delete/${_id}`;
+      const url = `https://sleepy-island-26546.herokuapp.com/orders/delete/${_id}`;
       fetch(url, {
         method: "DELETE",
       })

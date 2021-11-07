@@ -6,7 +6,7 @@ const ManageAllOrders = (props) => {
   const [isStatus, setIsStatus] = useState(true);
   const showBtn = true;
   useEffect(() => {
-    fetch("http://localhost:5000/orders/manageall")
+    fetch("https://sleepy-island-26546.herokuapp.com/orders/manageall")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, []);
@@ -14,7 +14,7 @@ const ManageAllOrders = (props) => {
   const handleDelete = (_id) => {
     const proced = window.confirm("Are you sure, you want to delete?");
     if (proced) {
-      const url = `http://localhost:5000/orders/delete/${_id}`;
+      const url = `https://sleepy-island-26546.herokuapp.com/orders/delete/${_id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -33,7 +33,7 @@ const ManageAllOrders = (props) => {
 
   const handleStatus = (_id) => {
     // setStatus(true);
-    const url = `http://localhost:5000/status/${_id}`;
+    const url = `https://sleepy-island-26546.herokuapp.com/status/${_id}`;
     fetch(url, {
       method: "PUT",
       headers: {
